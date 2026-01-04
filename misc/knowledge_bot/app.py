@@ -1,13 +1,24 @@
 import gradio as gr
 import os
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
 from crawler import WebCrawler
 from rag import KnowledgeBase
 from voice import VoiceBot
 
 # Initialize modules
+logger.info("Initializing modules...")
 crawler = WebCrawler()
+logger.info("WebCrawler initialized")
 kb = KnowledgeBase()
+logger.info("KnowledgeBase initialized")
 voice_bot = VoiceBot()
+logger.info("VoiceBot initialized")
+logger.info("All modules initialized successfully")
 
 def process_url(url):
     """
@@ -93,4 +104,4 @@ with gr.Blocks(title="Knowledge Bot") as demo:
         )
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=7860)
+    demo.launch(server_name="0.0.0.0", server_port=7862)
