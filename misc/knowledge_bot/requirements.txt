@@ -1,0 +1,14 @@
+gradio
+beautifulsoup4
+requests
+langchain
+langchain-community
+langchain-openai
+langchain-chroma
+chromadb
+sentence-transformers
+openai
+python-dotenv
+tiktoken
+dashscope
+edge-tts
